@@ -230,6 +230,6 @@ export async function mergeConfig(url: string, options: PakeAppOptions, tauriCon
   if (process.env.NODE_ENV === 'development') {
     tauriConf2.tauri.bundle = bundleConf.tauri.bundle;
   }
-  const configJsonPath = path.join(tauriConfigDirectory, 'tauri.conf.json');
+  const configJsonPath = path.join(tauriConfigDirectory, 'tauri.conf.toml');
   await fsExtra.outputJSON(configJsonPath, tauriConf2, { spaces: 4 });
 }
