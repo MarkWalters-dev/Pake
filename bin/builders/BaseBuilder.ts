@@ -56,9 +56,9 @@ export default abstract class BaseBuilder {
       logger.info('✺ Located in China, using npm/rsProxy CN mirror.');
       const projectCnConf = path.join(tauriSrcPath, 'rust_proxy.toml');
       await fsExtra.copy(projectCnConf, projectConf);
-      await shellExec(`cd "${npmDirectory}" && npm install --registry=https://registry.npmmirror.com`);
+      await shellExec(`cd "${npmDirectory}" && pnpm install --registry=https://registry.npmmirror.com`);
     } else {
-      await shellExec(`cd "${npmDirectory}" && npm install`);
+      await shellExec(`cd "${npmDirectory}" && pnpm install`);
     }
     spinner.succeed(chalk.green('Package installed!'));
     if (!tauriTargetPathExists) {
