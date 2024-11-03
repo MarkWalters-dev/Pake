@@ -24,10 +24,9 @@ shortDescription = ""
 targets = ["deb", "appimage"]
 
 [tauri.security]
-csp = ""  # Empty string instead of null
+csp = ""
 
 [tauri.windows]
-[[tauri.windows]]
 title = "Replit"
 url = "https://replit.com"
 width = 1200
