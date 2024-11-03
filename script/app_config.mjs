@@ -1,5 +1,5 @@
 import pakeJson from '../src-tauri/pake.json' assert { type: 'json' };
-import tauriJson from '../src-tauri/tauri.conf.json' assert { type: 'json' };
+import tauriJson from '../src-tauri/tauri.conf.yaml' assert { type: 'yaml' };
 import windowsJson from '../src-tauri/tauri.windows.conf.json' assert { type: 'json' };
 import macosJson from '../src-tauri/tauri.macos.conf.json' assert { type: 'json' };
 import linuxJson from '../src-tauri/tauri.linux.conf.json' assert { type: 'json' };
@@ -26,7 +26,7 @@ const variables = {
   nameZh: process.env.NAME_ZH,
 
   pakeConfigPath: 'src-tauri/pake.json',
-  tauriConfigPath: 'src-tauri/tauri.conf.json',
+  tauriConfigPath: 'src-tauri/tauri.conf.yaml',
   identifier: `com.pake.${process.env.NAME}`,
 
   linux: {
