@@ -1,17 +1,36 @@
+[build]
+beforeDevCommand = ""
+beforeBuildCommand = ""
+devPath = "../dist"
+distDir = "../dist"
+
 [package]
-product_name = "replit"
+productName = "replit"
 version = "1.0.0"
 
 [tauri]
+allowlist = { all = true }
+
+[tauri.bundle]
+active = true
+category = "DeveloperTool"
+copyright = ""
+externalBin = []
+icon = ["png/icon_512.png"]
+identifier = "dev.markwalters.replit"
+longDescription = ""
+resources = []
+shortDescription = ""
+targets = ["deb", "appimage"]
+
 [tauri.security]
-csp = null
+csp = ""  # Empty string instead of null
 
-[tauri.updater]
-active = false
-
-[build]
-with_global_tauri = true
-dev_path = "../dist"
-dist_dir = "../dist"
-before_build_command = ""
-before_dev_command = ""
+[tauri.windows]
+[[tauri.windows]]
+title = "Replit"
+url = "https://replit.com"
+width = 1200
+height = 780
+resizable = true
+fullscreen = false
