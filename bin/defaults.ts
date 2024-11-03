@@ -27,7 +27,7 @@ export const DEFAULT_PAKE_OPTIONS: PakeCliOptions = {
 export const DEFAULT_DEV_PAKE_OPTIONS: PakeCliOptions & { url: string } = {
   ...DEFAULT_PAKE_OPTIONS,
   url: 'https://replit.com',
-  name: 'Replit',
+  name: 'replit',
   safeDomain: ['replit.com'],
   hideTitleBar: true,
 };
