@@ -1,0 +1,17 @@
+[package]
+product_name = "replit"
+version = "1.0.0"
+
+[tauri]
+[tauri.security]
+csp = null
+
+[tauri.updater]
+active = false
+
+[build]
+with_global_tauri = true
+dev_path = "../dist"
+dist_dir = "../dist"
+before_build_command = ""
+before_dev_command = ""
