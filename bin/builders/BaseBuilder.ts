@@ -102,7 +102,7 @@ export default abstract class BaseBuilder {
 
   protected getBuildCommand(): string {
     // the debug option should support `--debug` and `--release`
-    return this.options.debug ? 'npm run build:debug' : 'npm run build';
+    return this.options.debug ? 'pnpm run build:debug' : 'pnpm run build';
   }
 
   protected getBasePath(): string {

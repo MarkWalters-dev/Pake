@@ -50,18 +50,18 @@ var files = [
 	"cli.js"
 ];
 var scripts = {
-	start: "npm run dev",
-	dev: "npm run tauri dev",
-	build: "npm run tauri build --release",
-	"build:debug": "npm run tauri build -- --debug",
-	"build:mac": "npm run tauri build -- --target universal-apple-darwin",
+	start: "pnpm run dev",
+	dev: "pnpm run tauri dev",
+	build: "pnpm run tauri build --release",
+	"build:debug": "pnpm run tauri build -- --debug",
+	"build:mac": "pnpm run tauri build -- --target universal-apple-darwin",
 	"build:config": "chmod +x script/app_config.mjs && node script/app_config.mjs",
 	analyze: "cd src-tauri && cargo bloat --release --crates",
 	tauri: "tauri",
 	cli: "rollup -c rollup.config.js --watch",
 	"cli:dev": "cross-env NODE_ENV=development rollup -c rollup.config.js -w",
 	"cli:build": "cross-env NODE_ENV=production rollup -c rollup.config.js",
-	prepublishOnly: "npm run cli:build"
+	prepublishOnly: "pnpm run cli:build"
 };
 var type = "module";
 var exports = "./dist/pake.js";
@@ -739,7 +739,7 @@ class BaseBuilder {
     }
     getBuildCommand() {
         // the debug option should support `--debug` and `--release`
-        return this.options.debug ? 'npm run build:debug' : 'npm run build';
+        return this.options.debug ? 'pnpm run build:debug' : 'pnpm run build';
     }
     getBasePath() {
         const basePath = this.options.debug ? 'debug' : 'release';
@@ -767,7 +767,7 @@ class MacBuilder extends BaseBuilder {
         return `${name}_${tauriConfig.package.version}_${arch}`;
     }
     getBuildCommand() {
-        return this.options.multiArch ? 'npm run build:mac' : super.getBuildCommand();
+        return this.options.multiArch ? 'pnpm run build:mac' : super.getBuildCommand();
     }
     getBasePath() {
         return this.options.multiArch
