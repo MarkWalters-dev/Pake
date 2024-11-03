@@ -662,7 +662,7 @@ async function mergeConfig(url, options, tauriConf) {
     let tauriConf2 = JSON.parse(JSON.stringify(tauriConf));
     delete tauriConf2.pake;
     delete tauriConf2.tauri.bundle;
-    const configJsonPath = path.join(tauriConfigDirectory, 'tauri.conf.json');
+    const configJsonPath = path.join(tauriConfigDirectory, 'tauri.conf.toml');
     await fsExtra.outputJSON(configJsonPath, tauriConf2, { spaces: 4 });
 }
 
