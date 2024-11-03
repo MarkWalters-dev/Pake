@@ -67,7 +67,7 @@ function pakeCliDevPlugin() {
         if (devHasStarted) return;
         devHasStarted = true;
         devChildProcess = await exec(
-          'pnpm run tauri dev -- --config ./src-tauri/.pake/tauri.conf.json --features cli-build',
+          'pnpm run tauri dev -- --config ./src-tauri/pake/tauri.conf.json --features cli-build',
         );
 
         devChildProcess.stdout.on('data', data => {
