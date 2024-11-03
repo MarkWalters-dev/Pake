@@ -131,7 +131,7 @@ function updateTauriJson() {
   tauriJson.tauri.security.dangerousRemoteDomainIpcAccess[0].domain = url.hostname;
   tauriJson.package.productName = variables.title;
 
-  writeFileSync('src-tauri/tauri.conf.toml', JSON.stringify(tauriJson, null, 2));
+  writeFileSync('src-tauri/tauri.conf.json', JSON.stringify(tauriJson, null, 2));
 }
 
 function updateIconFile(iconPath, defaultIconPath) {
