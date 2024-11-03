@@ -5,7 +5,7 @@ use tauri::{api, Config, Window};
 
 pub fn get_pake_config() -> (PakeConfig, Config) {
     #[cfg(feature = "cli-build")]
-    let pake_config: PakeConfig = serde_json::from_str(include_str!("../.pake/pake.json"))
+    let pake_config: PakeConfig = serde_json::from_str(include_str!("../pake.json"))
         .expect("Failed to parse pake config");
 
     #[cfg(not(feature = "cli-build"))]
@@ -13,7 +13,7 @@ pub fn get_pake_config() -> (PakeConfig, Config) {
         serde_json::from_str(include_str!("../pake.json")).expect("Failed to parse pake config");
 
     #[cfg(feature = "cli-build")]
-    let tauri_config: Config = serde_json::from_str(include_str!("../.pake/tauri.conf.toml"))
+    let tauri_config: Config = serde_json::from_str(include_str!("../tauri.conf.toml"))
         .expect("Failed to parse tauri config");
 
     #[cfg(not(feature = "cli-build"))]
