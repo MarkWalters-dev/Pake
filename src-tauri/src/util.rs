@@ -13,11 +13,11 @@ pub fn get_pake_config() -> (PakeConfig, Config) {
         serde_json::from_str(include_str!("../pake.json")).expect("Failed to parse pake config");
 
     #[cfg(feature = "cli-build")]
-    let tauri_config: Config = serde_json::from_str(include_str!("../.pake/tauri.conf.json"))
+    let tauri_config: Config = serde_json::from_str(include_str!("../.pake/tauri.conf.toml"))
         .expect("Failed to parse tauri config");
 
     #[cfg(not(feature = "cli-build"))]
-    let tauri_config: Config = serde_json::from_str(include_str!("../tauri.conf.json"))
+    let tauri_config: Config = serde_json::from_str(include_str!("../tauri.conf.toml"))
         .expect("Failed to parse tauri config");
 
     (pake_config, tauri_config)
