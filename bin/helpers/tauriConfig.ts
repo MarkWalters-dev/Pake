@@ -1,5 +1,5 @@
 import pakeConf from '../../src-tauri/pake.json';
-import CommonConf from '../../src-tauri/tauri.conf.toml';
+import CommonConf from '../../src-tauri/tauri.conf.json';
 import WinConf from '../../src-tauri/tauri.windows.conf.json';
 import MacConf from '../../src-tauri/tauri.macos.conf.json';
 import LinuxConf from '../../src-tauri/tauri.linux.conf.json';
